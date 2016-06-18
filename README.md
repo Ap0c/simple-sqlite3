@@ -1,6 +1,6 @@
 # Simple Sqlite3
 
-A simple way of interacting with sqlite3 in Python, designed for use in web apps.
+A simple library for interacting with sqlite3 in Python, designed for use in web apps.
 
 ## What/Why?
 
