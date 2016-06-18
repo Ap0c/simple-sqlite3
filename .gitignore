@@ -3,4 +3,5 @@
 build/*
 dist/*
 simple_sqlite3.egg-info/*
-
+.env/*
+*.db
