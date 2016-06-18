@@ -10,13 +10,13 @@ I found that I was reusing this code enough when working with flask and bottle t
 
 All interaction occurs through a `Database` class:
 
-```
+```py
 from simple_sqlite3 import Database
 ```
 
 The database object can be initialised by passing a path to the sqlite3 file, and an optional schema to initialise with:
 
-```
+```py
 db = Database('my_database.db', schema_file='schema.sql')
 ```
 
@@ -24,7 +24,7 @@ db = Database('my_database.db', schema_file='schema.sql')
 
 You can choose to run a single query, using the `query` method:
 
-```
+```py
 rows = db.query('SELECT * FROM table_of_stuff')
 
 word = 'aardvark'
@@ -35,7 +35,7 @@ This will return a list of rows that have been retrieved, or a row id for querie
 
 It is also possible to run multiple queries through the `many` method:
 
-```
+```py
 words = (
     ('apple',),
     ('pear',),
@@ -75,7 +75,7 @@ Performs queries on the database, based on an SQL querystring and given argument
 
 Return objects may either be a list of retrieved rows, for `SELECT` queries, or the id of a created/modified row for write-based queries (`INSERT`, `UPDATE`, etc.). Retrieved rows will be in the form of an [sqlite3.Row](https://docs.python.org/3.5/library/sqlite3.html#row-objects) object, which allows access to values via index or column key:
 
-```
+```py
 result = db.query('SELECT id, word FROM dictionary')[0]
 first_row = result[0]
 
@@ -92,7 +92,7 @@ Works in the same way as the `query` method, but performs the given querystring 
 
 This method will not return anything. Here is an example of what is meant by an iterable of arguments:
 
-```
+```py
 words = [
     ('apple', 'fruit'),
     ('pear', 'fruit'),
