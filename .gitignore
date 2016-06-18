@@ -1,2 +1,6 @@
 *.pyc
 *.DS_Store
+build/*
+dist/*
+simple_sqlite3.egg-info/*
+
