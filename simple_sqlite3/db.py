@@ -43,11 +43,11 @@ class Database():
 			self.init_db(schema_file)
 
 	@_connection
-	def init_db(self, schema_path):
+	def init_db(self, schema_file):
 
 		"""Sets up the database from a schema file."""
 
-		with open(schema_path, 'r') as schema_file:
+		with open(schema_file, 'r') as schema_file:
 			self.cur.executescript(schema_file.read())
 
 	@_connection
